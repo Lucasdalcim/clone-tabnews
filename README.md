@@ -2,7 +2,7 @@
 
 ## Filtro de extratos bancários com IA
 
-Este projeto fornece um script que lê um arquivo Excel de extrato bancário, classifica as transações como **gasto** ou **recebido** e mostra os totais. Quando a variável `OPENAI_API_KEY` estiver configurada, o script pode usar IA para fazer a classificação.
+Este projeto fornece um **notebook Jupyter** que lê um arquivo Excel de extrato bancário, classifica as transações como **gasto** ou **recebido** e mostra os totais. Quando a variável `OPENAI_API_KEY` estiver configurada, o notebook pode usar IA para fazer a classificação.
 
 ### Instalação
 
@@ -12,24 +12,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Uso básico
+### Como usar o notebook
 
-```bash
-python bank_ai_filter.py caminho/para/extrato.xlsx --output extrato_classificado.xlsx
-```
+1. Abra `bank_ai_filter.ipynb` no Jupyter (JupyterLab, VS Code, etc.).
+2. Preencha o caminho do Excel e as opções de classificação na célula de configurações.
+3. Execute as células para obter o resumo e, se desejar, salvar o arquivo classificado.
 
-### Usar IA (OpenAI)
+### Observações
 
-```bash
-export OPENAI_API_KEY="sua-chave"
-python bank_ai_filter.py caminho/para/extrato.xlsx --use-ai
-```
-
-### Parâmetros úteis
-
-- `--description-column`: nome da coluna com a descrição da transação.
-- `--amount-column`: nome da coluna com o valor da transação.
-- `--output`: caminho para salvar o Excel com a coluna `classificacao`.
-- `--model`: modelo OpenAI usado na classificação.
-
-O script tenta detectar automaticamente as colunas de descrição e valor quando elas não são informadas.
+- O notebook tenta detectar automaticamente as colunas de descrição e valor quando elas não são informadas.
+- Para usar IA, defina `OPENAI_API_KEY` no ambiente antes de abrir o notebook.
